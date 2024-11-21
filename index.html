@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Resume Generator</title>
+    <link rel="stylesheet" href="style.css" />
+    <style>
+    .resume-container{
+        display :none ;   
+    }
+    .u{
+        display: none;
+    }
+        </style>
+  </head>
+  <body>
+    <div class="resume-generator">
+      <!-- Form Section -->
+      <div class="form-container">
+        <h2>Resume Creator</h2>
+        <form id="resumeForm">
+          <input type="text" id="fullName" placeholder="Your Name" required />
+          <input type="text" id="jobTitle" placeholder="Title/Sub Heading" required />
+          
+          <textarea id="objective" placeholder="Objective" rows="3" required></textarea>
+          <textarea id="skills" placeholder="Skills (comma-separated)" rows="2" required></textarea>
+          <textarea id="education" placeholder="Academic Details" rows="3" required></textarea>
+          <textarea id="contact" placeholder="Contact Information" rows="2" required></textarea>
+          <textarea id="experience" placeholder="Work Experience" rows="3"></textarea>
+          <textarea id="achievements" placeholder="Achievements" rows="3"></textarea>
+          <textarea id="projects" placeholder="Projects" rows="3"></textarea>
+
+          <button class=b type="button" onclick="generateResume()">Generate</button> 
+      </div>
+    </div>
+
+        <!-- Resume Preview Section -->
+         <div class="r">
+            <div class="resume-container" id="resumeContainer">
+                <div class="resume-header">
+                    <h2 id="resumeName">Full Name</h2>
+                    <h4 id="resumeTitle">Job Title</h4>
+                </div>
+                
+                <div class="objective">
+                    <h3>Objective</h3>
+                    <br />
+                    <p id="resumeObjective"></p>
+                    <br /><br />
+                </div>
+                
+                <div class="resume-body">
+                    <div class="left-column">
+                        <h3>Skills</h3>
+                        <br />
+                        <p id="resumeSkills"></p>
+                        <br /><br />
+                        <h3>Academic Details</h3>
+                        <br />
+                        <p id="resumeEducation"></p>
+                        <br /><br />
+                        <h3>Contact</h3>
+                        <br />
+                        <p id="resumeContact"></p>
+                        <br /><br />
+                    </div>
+                    
+                    <div class="right-column">
+                        <h3>Work Experience</h3>
+                        <br />
+                        <p id="resumeExperience"></p>
+                        <br /><br />
+                        <h3>Achievements</h3>
+                        <br />
+                        <p id="resumeAchievements"></p>
+                        <br /><br />
+                        <h3>Projects</h3>
+                        <br />
+                        <p id="resumeProjects"></p>
+                        <br /><br />
+                    </div>
+                </div>
+                <div class="resume-footer">
+                    <button onclick="window.print();">Print Resume</button>
+                </div>
+            </div>
+        </div>
+      
+    <script src="script.js"></script>
+  </body>
+</html>
